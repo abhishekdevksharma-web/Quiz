@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="tamplate.css">
+    <link rel="stylesheet" href="main-student.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <div id="quiz-container" class="quiz-container">
+        <form id="quizForm">
+            <fieldset>
+                <legend>1. Who wrote 'Hamlet'?</legend>
+                <label class="option"><input type="radio" name="q1" value="A"> William Shakespeare</label>
+                <label class="option"><input type="radio" name="q1" value="B"> Charles Dickens</label>
+                <label class="option"><input type="radio" name="q1" value="C"> Jane Austen</label>
+                <label class="option"><input type="radio" name="q1" value="D"> Ernest Hemingway</label>
+            </fieldset>
+            <button class="quiz-submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="quiz-container" class="quiz-container">
+        <form id="quizForm">
+            <fieldset>
+                <legend>1. Who wrote 'Hamlet'?</legend>
+                <label class="option"><input type="radio" name="q1" value="A"> William Shakespeare</label>
+                <label class="option"><input type="radio" name="q1" value="B"> Charles Dickens</label>
+                <label class="option"><input type="radio" name="q1" value="C"> Jane Austen</label>
+                <label class="option"><input type="radio" name="q1" value="D"> Ernest Hemingway</label>
+            </fieldset>
+            <button class="quiz-submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- FIXED HEADER -->
+    <!-- <div class="student-header">
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" class="switch-input">
+                <span class="switch-toggle"></span>
+            </label>
+        </div>
+        <div>
+            <h6 id="room"></h6>
+            <h1 class="student-name">John Doe</h1>
+        </div>
+    </div> -->
+
+    <!-- AUTHENTICATE FORM -->
+    <!-- <div id="container" class="container">
+        <form id="Authencate-form">
+            <h2>Authenticate</h2>
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="name" name="Name" placeholder="John Doe" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" name="Email" placeholder="240000@kit.ac.in" required>
+            </div>
+            <div class="input-group">
+                <label for="afn">AFN Number</label>
+                <i class="fas fa-id-card input-icon"></i>
+                <input type="text" id="afn" name="AFN" placeholder="AFN-1234" required>
+            </div>
+            <button class="sbmt" type="submit">
+                Authenticate Now <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+    </div> -->
+
+
+    
+    
+
+    <div class="quiz-card" id="quiz-card">
+        <!-- Loading Overlay -->
+        <div class="loader-overlay" id="loader">
+            <div class="loader"></div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div class="quiz-content" id="content">
+            <div class="quiz-header">
+                <h1 class="quiz-title" id="quiz-title">Quick Knowledge Test</h1>
+                <div class="quiz-subject" id="quiz-subject">General Awareness</div>
+            </div>
+
+            <div class="quiz-details">
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        Total Questions
+                    </div>
+                    <div class="detail-value" id="total-questions">15</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                        Duration
+                    </div>
+                    <div class="detail-value" id="duration">10 mins</div>
+                </div>
+            </div>
+
+            <button class="black-button" id="rippleBtn">CLICK ME</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="Stuedent.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+.black-button {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+
+
+.black-button:hover {
+  background-color: #444;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.black-button:active {
+  background-color: #555;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  transform: scale(0.98);
+}
+
+/* Ripple effect ke liye span */
+.black-button span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.4);
+  pointer-events: none;
+  animation: ripple-animation 0.6s linear forwards;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Blinking dots ka style */
+.dots span {
+  opacity: 0;
+  /* 1.4s duration with 3 iterations aur animation-fill-mode taaki animation end ke baad final state maintain ho */
+  animation: blinkDots 1.4s ease-in-out 3;
+  animation-fill-mode: forwards;
+  display: inline-block;
+}
+
+/* Dots ke liye delay alag-alag */
+.dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blinkDots {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+

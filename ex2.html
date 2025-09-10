@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BSEB Result Check (Design Only)</title>
+<style>
+  /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Top Header */
+.top-header {
+  background-color: rgb(0,156,217); /* Deep blue shade */
+  color: #fff;
+  padding: 15px 0;
+}
+
+.header-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.bseb-logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Sub-header */
+.sub-header {
+  background-color: #5bc0de; /* Lighter blue shade */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.sub-header h2 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Form Container */
+.form-container {
+  width: 90%;
+  max-width: 450px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* View Button */
+.view-btn {
+  background-color: #0275d8;
+  color: #fff;
+}
+
+.view-btn:hover {
+  background-color: #025aa5;
+}
+
+/* Reset Button */
+.reset-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.reset-btn:hover {
+  background-color: #999;
+}
+
+</style></head>
+<body>
+
+  <!-- Top Header with Dummy Logo and Board Name -->
+  <header class="top-header">
+    <div class="header-content">
+      <!-- Replace 'dummy_logo.png' with your real logo file -->
+      <img src="dummy_logo.png" alt="Dummy Logo" class="bseb-logo">
+      <h1>Bihar School Examination Board</h1>
+    </div>
+  </header>
+
+  <!-- Sub-header Section -->
+  <section class="sub-header">
+    <h2>EXAMINATION RESULT</h2>
+  </section>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="roll_code">Roll Code<span class="required">*</span></label>
+        <input type="text" id="roll_code" name="roll_code" placeholder="Enter RollCode" required>
+      </div>
+
+      <div class="form-group">
+        <label for="roll_no">Roll No<span class="required">*</span></label>
+        <input type="text" id="roll_no" name="roll_no" placeholder="Enter RollNo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="captcha">Enter Total of: 11 + 10 =</label>
+        <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha" required>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="btn view-btn">View</button>
+        <button type="reset" class="btn reset-btn">Reset</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
