@@ -1,40 +1,116 @@
 const mongoose = require("mongoose");
 
-const quizSchema = new mongoose.Schema({
-    quizID: { type: String, required: true, unique: true },
-    quizName: {
-        type: String,
+const quizSchema = new mongoose.Schema(
+    {
+        title: {
+            type: String,
+        },
+
+        subject: {
+            type: String,
+        },
+
+        difficulty: {
+            type: String,
+            default: "medium",
+            enum: ["Easy", "Medium", "Hard"],
+        },
+
+        timing: {
+            type: {
+                type: String,
+                enum: ["Duration", "Scheduled"],
+                default: "Duration",
+                required: true,
+            },
+
+            durationMinutes: {
+                type: Number,
+                default: null,
+            },
+
+            startTime: {
+                type: Date,
+                default: null,
+            },
+
+            endTime: {
+                type: Date,
+                default: null,
+            },
+        },
+
+        totalQuestions: {
+            type: Number,
+        },
+
+        tag: {
+            type: String,
+        },
+
+        status: {
+            type: String,
+            enum: ["Open", "Closed", "Scheduled", "Draft", "Paused"],
+            default: "Closed",
+        },
+
+        submitted: {
+            type: Number,
+            default: 0,
+        },
+
+        createdBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+
+        },
+
+        scoresGenerated: {
+            type: Boolean,
+            default: false,
+        },
+
+        questions: [
+            {
+                questionText: {
+                    type: String,
+
+                },
+                options: {
+                    type: [String],
+
+                },
+                correctOptionIndex: {
+                    type: String,
+
+                },
+                marks: {
+                    type: Number,
+                    default: 1,
+                },
+                questionNumber: {
+                    type: Number,
+                },
+            },
+        ],
+        // negativeMarking: {
+        //     enabled: Boolean,
+        //     marks: Number,
+        // },
+        // passingMarks: Number,
+        // maxAttempts: {
+        //     type: Number,
+        //     default: 1
+        // },
+        // quizCode: {
+        //     type: String,
+        //     unique: true
+        // }
     },
-    quizSubject: {
-        type: String,
-    },
-    questions: [
-        {
-            question: { type: String, required: true },
-            options: [{ type: String, required: true }],
-            correctAnswer: { type: String, required: true }
-        }
-    ],
-    Students: [{ type: mongoose.Schema.Types.ObjectId, ref: "quiz-student" }],
-    createdBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "admin",
-    },
-    submission: {
-        type: String,
-        default: "Not Yet"
-    },
-    Date: {
-        type: Date,
-        default: Date.now,
-    },
-    isLive: {
-        type: Boolean,
-        default: false,
+    {
+        timestamps: true,
     }
 
-}, { timestamps: true });
+);
 
-const Quiz = mongoose.model("Quiz", quizSchema);
-
-module.exports = Quiz;
+module.exports = mongoose.model("UserQuiz", quizSchema);
