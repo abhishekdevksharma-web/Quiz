@@ -50,8 +50,7 @@ function AdminState(props) {
       const data = await response.json();
 
       setadminQuizHistory(data);
-      setAdminAllQuizFetched(true);
-      // console.log(adminQuizHistory);
+      setAdminAllQuizFetched(true); 
 
       return data;
     } catch (error) {
@@ -60,8 +59,7 @@ function AdminState(props) {
     return adminQuizHistory;
   }
 
-  async function fetchRecentQuizes(IsUserAuthenticate) {
-    console.log("run 2", IsUserAuthenticate);
+  async function fetchRecentQuizes(IsUserAuthenticate) { 
 
     if (!IsUserAuthenticate) {
       return;

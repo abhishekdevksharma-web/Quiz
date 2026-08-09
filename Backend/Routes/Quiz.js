@@ -9,12 +9,10 @@ require("dotenv").config();
 
 const router = express.Router()
 
-router.post("/createquiz", authUser, async (req, res) => {
-    console.log(req.body)
+router.post("/createquiz", authUser, async (req, res) => { 
     try {
         const quizMeta = req.body
-
-        console.log("user", req.user.findedUser._id);
+ 
         const { title, subject, difficulty, totalQuestions, timing, tag, status, attempts } = req.body
 
         const created = await UserQuiz.create({

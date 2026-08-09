@@ -31,8 +31,7 @@ function Home() {
       try {
         setisfechedRecentQuiz(true);
 
-        const { user, loginStatus, activeQuizzes } = await Dashboard();
-        console.log(activeQuizzes);
+        const { user, loginStatus, activeQuizzes } = await Dashboard(); 
         
 
         if (loginStatus) {

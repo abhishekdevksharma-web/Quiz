@@ -47,8 +47,7 @@ const QuizCard = () => {
   useEffect(() => {
     async function initialFetches() {
       try {
-        const res = await fetchQuizDetail(id);
-        console.log(res);
+        const res = await fetchQuizDetail(id); 
 
         setQuestions(res.questions);
         if (!res) {

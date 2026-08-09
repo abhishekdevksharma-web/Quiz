@@ -10,8 +10,7 @@ import {
 export default function StudentResultModal({ data, colorMode }) {
   if (!data) return null;
 
-  const { type } = data;
-  console.log(data);
+  const { type } = data; 
   
 
   return (

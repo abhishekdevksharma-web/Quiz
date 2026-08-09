@@ -80,8 +80,7 @@ const QuizFrame = () => {
       ...userMeta,
       submittedInSec: timerRef.current,
     };
-    const res = await validateUserAnswer(newData);
-    console.log(res);
+    const res = await validateUserAnswer(newData); 
     if (res.status === true) {
 
       setResultLoding(false);

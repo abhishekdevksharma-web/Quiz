@@ -17,8 +17,7 @@ export default function StatCard({
 }) {
   const [isOpen, setisOpen] = useState(false);
   const [selected, setSelected] = useState(options[0] || null);
-
-  console.log(selected?.timing);
+ 
 
   function onToggle() {
     setisOpen(!isOpen);

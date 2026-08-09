@@ -47,10 +47,7 @@ const AdminQuizHistory = () => {
       setLoading(false);
     }
     fetchAllQuizes();
-  }, []);
-  useEffect(() => {
-    console.log(quizzes);
-  }, [quizzes]);
+  }, []); 
 
   return (
     <main
